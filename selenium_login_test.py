@@ -8,3 +8,4 @@ with webdriver.Chrome() as driver:
         driver.get("http://127.0.0.1:8000"); WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.ID, "username"))).send_keys("student")
         driver.find_element(By.ID, "password").send_keys(password); driver.find_element(By.ID, "login").click()
         assert WebDriverWait(driver, 10).until(EC.text_to_be_present_in_element((By.ID, "message"), result))
+print("Both login checks passed")
